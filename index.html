@@ -4,148 +4,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - Muhammad Razin Haidar Karim</title>
-    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
-        body {
-            background-color: #0f172a;
-            color: #cbd5e1;
-            font-family: 'Inter', sans-serif;
+        body { 
+            background-color: #0f172a; 
+            color: #cbd5e1; 
+            font-family: 'Inter', sans-serif; 
         }
-        ::selection {
-            background-color: #0d6efd;
-            color: #fff;
+        ::selection { 
+            background-color: #0d6efd; 
+            color: #fff; 
         }
-        .glass-nav {
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+        .glass-nav { 
+            background: rgba(15, 23, 42, 0.85); 
+            backdrop-filter: blur(10px); 
+            border-bottom: 1px solid rgba(51, 65, 85, 0.5); 
         }
-        .glass-card {
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(71, 85, 105, 0.4);
-            border-radius: 12px;
-            transition: transform 0.3s ease, border-color 0.3s ease;
+        .glass-card { 
+            background: rgba(30, 41, 59, 0.7); 
+            backdrop-filter: blur(8px); 
+            border: 1px solid rgba(71, 85, 105, 0.4); 
+            border-radius: 12px; 
+            transition: transform 0.3s ease, border-color 0.3s ease; 
         }
-        .glass-card:hover {
-            border-color: #0d6efd;
-            transform: translateY(-3px);
+        .glass-card:hover { 
+            border-color: #0d6efd; 
+            transform: translateY(-3px); 
         }
-        .font-mono {
-            font-family: 'Fira Code', monospace;
+        .text-gradient { 
+            background: linear-gradient(135deg, #0dcaf0, #20c997); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
         }
-        .text-gradient {
-            background: linear-gradient(135deg, #0dcaf0, #20c997);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .text-cyan { 
+            color: #0dcaf0; 
         }
-        .text-cyan {
-            color: #0dcaf0;
-        }
-        .text-emerald {
-            color: #20c997;
-        }
-        .terminal-window {
-            background-color: #020617;
-            border: 1px solid #1e293b;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-        .terminal-header {
-            background-color: #0f172a;
-            border-bottom: 1px solid #1e293b;
-        }
-        .terminal-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            display: inline-block;
-            margin-right: 6px;
-        }
-        .terminal-body {
-            height: 250px;
-            overflow-y: auto;
-            font-size: 0.85rem;
-        }
-        .terminal-input {
-            background: transparent;
-            border: none;
-            color: #f8f9fa;
-            outline: none;
-            width: 80%;
-        }
-        .timeline-container {
-            position: relative;
-            padding-left: 20px;
-        }
-        .timeline-line {
-            position: absolute;
-            left: 5px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, #0d6efd, transparent);
-        }
-        .timeline-item {
-            position: relative;
-            margin-bottom: 2rem;
-        }
-        .timeline-dot {
-            position: absolute;
-            left: -21px;
-            top: 6px;
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            background: #0f172a;
-            border: 2px solid #0d6efd;
-        }
-        .profile-img {
-            border: 3px solid #0dcaf0;
-            padding: 3px;
-        }
-        .progress {
-            height: 6px;
-            background-color: #1e293b;
-            margin-bottom: 1rem;
-        }
-        .cursor-blink {
-            display: inline-block;
-            width: 8px;
-            height: 16px;
-            background: #20c997;
-            animation: blink 1s step-end infinite;
-            vertical-align: middle;
-        }
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
-        }
-        #customToast {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%) translateY(100px);
-            background: #0d6efd;
-            color: white;
-            padding: 8px 20px;
-            border-radius: 20px;
-            transition: transform 0.3s ease;
-            z-index: 1050;
-            opacity: 0;
-        }
-        #customToast.show {
-            transform: translateX(-50%) translateY(0);
-            opacity: 1;
+        .text-emerald { 
+            color: #20c997; 
         }
         .text-muted {
-            color: #e2e8f0 !important;
+            color: #cbd5e1 !important; 
         }
-        
+        .text-white { 
+            color: #f8fafc !important; 
+        }
+        .timeline-container { 
+            position: relative; 
+            padding-left: 20px; 
+        }
+        .timeline-line { 
+            position: absolute; 
+            left: 5px; 
+            top: 0; 
+            bottom: 0; 
+            width: 2px; 
+            background: linear-gradient(to bottom, #0d6efd, transparent); 
+        }
+        .timeline-item { 
+            position: relative; 
+            margin-bottom: 2rem; 
+        }
+        .timeline-dot { 
+            position: absolute; 
+            left: -21px; 
+            top: 6px; 
+            width: 14px; 
+            height: 14px; 
+            border-radius: 50%; 
+            background: #0f172a; 
+            border: 2px solid #0d6efd; 
+        }
+        .profile-img { 
+            border: 3px solid #0dcaf0; 
+            padding: 3px; 
+        }
+        .progress { 
+            height: 6px; 
+            background-color: #1e293b; 
+            margin-bottom: 1rem; 
+        }
+        #customToast { 
+            position: fixed; 
+            bottom: 20px; 
+            left: 50%; 
+            transform: translateX(-50%) translateY(100px); 
+            background: #0d6efd; 
+            color: white; 
+            padding: 8px 20px; 
+            border-radius: 20px; 
+            transition: transform 0.3s ease; 
+            z-index: 1050; 
+            opacity: 0; 
+        }
+        #customToast.show { 
+            transform: translateX(-50%) translateY(0); 
+            opacity: 1; 
+        }
+        .highlight-box {
+            background: rgba(13, 202, 240, 0.1);
+            border-left: 4px solid #0dcaf0;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+        .skill-tag {
+            background-color: #1e293b;
+            color: #20c997;
+            border: 1px solid #334155;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin: 0 4px 4px 0;
+        }
         .timeline-item ul li {
             color: #d1d5db;
         }
@@ -153,16 +125,16 @@
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70">
 
-    <div id="customToast" class="font-mono small shadow">Tersalin ke clipboard!</div>
+    <div id="customToast" class="small shadow">Tersalin ke clipboard!</div>
 
     <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top glass-nav">
         <div class="container">
-            <a class="navbar-brand font-mono fw-bold fs-6" href="#home">razin<span class="text-cyan">.dev</span></a>
+            <a class="navbar-brand fw-bold fs-6" href="#home">razin<span class="text-cyan">.dev</span></a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav font-mono small">
+                <ul class="navbar-nav small">
                     <li class="nav-item"><a class="nav-link" href="#about">~/about</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">~/skills</a></li>
                     <li class="nav-item"><a class="nav-link" href="#experience">~/experience</a></li>
@@ -176,48 +148,61 @@
         <section id="home" class="min-vh-100 d-flex align-items-center pt-5">
             <div class="container">
                 <div class="row align-items-center gy-5">
+                    
                     <div class="col-lg-6">
-                        <span class="badge bg-success bg-opacity-10 text-success border border-success mb-3 font-mono">
+                        <span class="badge bg-success bg-opacity-10 text-success border border-success mb-3">
                             <span class="spinner-grow spinner-grow-sm me-1" style="width: 8px; height: 8px;"></span> ONLINE
                         </span>
                         <h1 class="display-4 fw-bold text-white mb-2">Halo, Saya <span class="text-gradient">Razin</span></h1>
-                        <div class="h5 font-mono text-emerald mb-4">
-                            <span id="typingText"></span><span class="cursor-blink"></span>
+                        <div class="h5 text-emerald mb-4">
+                            System Administrator & Web Developer
                         </div>
                         <p class="text-muted mb-4">Mahasiswa Teknik Informatika yang berdedikasi pada pengembangan perangkat lunak, administrasi Linux, dan keamanan siber.</p>
                         <div class="d-flex gap-3">
-                            <a href="#projects" class="btn btn-primary font-mono small px-4 py-2">Lihat Proyek</a>
-                            <a href="https://github.com/rznblk2" target="_blank" class="btn btn-outline-info font-mono small px-4 py-2">GitHub</a>
+                            <a href="#projects" class="btn btn-primary small px-4 py-2">Lihat Proyek</a>
+                            <a href="https://github.com/rznblk2" target="_blank" class="btn btn-outline-info small px-4 py-2">GitHub</a>
                         </div>
                     </div>
                     
                     <div class="col-lg-6">
-                        <div class="terminal-window font-mono">
-                            <div class="terminal-header d-flex align-items-center p-2">
-                                <div class="terminal-dot" style="background-color: #ff5f56;"></div>
-                                <div class="terminal-dot" style="background-color: #ffbd2e;"></div>
-                                <div class="terminal-dot" style="background-color: #27c93f;"></div>
-                                <span class="ms-2 text-muted" style="font-size: 0.75rem;">razin@cv:~</span>
+                        <div class="glass-card p-4">
+                            <div class="d-flex align-items-center mb-4">
+                                <img src="image_042222.jpg" alt="Muhammad Razin" class="rounded-circle profile-img me-3" style="width: 80px; height: 80px;">
+                                <div>
+                                    <h5 class="text-white fw-bold mb-1">Muhammad Razin Haidar Karim</h5>
+                                    <p class="text-cyan small mb-0">NIM: 2411500016</p>
+                                </div>
                             </div>
-                            <div class="terminal-body p-3" id="termBody">
-                                <div id="termOut" class="text-secondary">
-                                    <div class="text-emerald mb-1">Welcome to CV Pemrograman Web 1</div>
-                                    <div class="mb-3">Ketik <span class="text-cyan">help</span> untuk melihat daftar perintah.</div>
-                                </div>
-                                <div class="d-flex align-items-center mt-2">
-                                    <span class="text-emerald me-2">razin@cv:~$</span>
-                                    <input type="text" id="termInput" class="terminal-input" autocomplete="off" autofocus>
-                                </div>
+                            
+                            <div class="highlight-box mb-4">
+                                <figure class="mb-0">
+                                    <blockquote class="blockquote mb-2">
+                                        <p class="text-white small fst-italic mb-0">"The only truly secure system is one that is powered off, cast in a block of concrete and sealed in a lead-lined room with armed guards."</p>
+                                    </blockquote>
+                                    <figcaption class="blockquote-footer text-cyan small mb-0 mt-2">
+                                        Gene Spafford
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            
+                            <div>
+                                <h6 class="text-white small mb-2">Tech Stack Utama:</h6>
+                                <span class="skill-tag">Linux</span>
+                                <span class="skill-tag">UFW & Iptables</span>
+                                <span class="skill-tag">Samba</span>
+                                <span class="skill-tag">Bootstrap 5</span>
+                                <span class="skill-tag">Python</span>
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </section>
 
         <section id="about" class="py-5">
             <div class="container">
-                <h2 class="section-title text-white fw-bold mb-4 font-mono"><span class="text-cyan">#</span> Tentang Saya</h2>
+                <h2 class="section-title text-white fw-bold mb-4"><span class="text-cyan">#</span> Tentang Saya</h2>
                 <div class="row gy-4">
                     <div class="col-lg-3 text-center">
                         <img src="photo.jpg" alt="Muhammad Razin" class="img-fluid rounded-circle profile-img shadow-lg" style="width: 200px; height: 200px; object-fit: cover;">
@@ -227,7 +212,7 @@
                             <p class="mb-3 text-white">Saya adalah mahasiswa Teknik Informatika di <strong>Universitas Budi Luhur</strong>. Saya memiliki minat mendalam terhadap cara sistem bekerja di balik layar, mulai dari membangun struktur web dengan Bootstrap hingga mengonfigurasi lapisan keamanan di level <em>server</em> Linux.</p>
                             <p class="mb-4 text-white">Pengalaman praktis saya mencakup mengatasi masalah perangkat keras laboratorium komputer, menerapkan <em>firewall</em> UFW, serta merancang arsitektur berbagi data yang aman menggunakan Samba File Server.</p>
                             
-                            <div class="row text-center font-mono">
+                            <div class="row text-center">
                                 <div class="col-md-4 mb-3">
                                     <div class="p-3 border border-secondary rounded">
                                         <h4 class="text-cyan fw-bold mb-1">Semester 4</h4>
@@ -255,27 +240,55 @@
 
         <section id="skills" class="py-5">
             <div class="container">
-                <h2 class="section-title text-white fw-bold mb-4 font-mono"><span class="text-cyan">#</span> Keahlian & Tools</h2>
+                <h2 class="section-title text-white fw-bold mb-4"><span class="text-cyan">#</span> Keahlian & Tools</h2>
                 <div class="glass-card p-4">
-                    <ul class="nav nav-pills mb-4 font-mono justify-content-center" id="pills-tab" role="tablist">
-                        <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#pills-net" type="button">Networking & Linux</button></li>
-                        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-dev" type="button">Web Development</button></li>
+                    <ul class="nav nav-pills mb-4 justify-content-center" id="pills-tab" role="tablist">
+                        <li class="nav-item">
+                            <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#pills-net" type="button">Networking & Linux</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-dev" type="button">Web Development</button>
+                        </li>
                     </ul>
                     <div class="tab-content" id="pills-tabContent">
                         <div class="tab-pane fade show active" id="pills-net" role="tabpanel">
                             <div class="row">
-                                <div class="col-md-6 mb-3"><div class="d-flex justify-content-between small mb-1"><span class="text-white">UFW & Iptables</span><span class="text-emerald font-mono">85%</span></div><div class="progress"><div class="progress-bar bg-success" style="width: 85%"></div></div></div>
-                                <div class="col-md-6 mb-3"><div class="d-flex justify-content-between small mb-1"><span class="text-white">Linux (Ubuntu/Kali)</span><span class="text-emerald font-mono">85%</span></div><div class="progress"><div class="progress-bar bg-success" style="width: 85%"></div></div></div>
-                                <div class="col-md-6 mb-3"><div class="d-flex justify-content-between small mb-1"><span class="text-white">Cisco Packet Tracer</span><span class="text-emerald font-mono">80%</span></div><div class="progress"><div class="progress-bar bg-success" style="width: 80%"></div></div></div>
-                                <div class="col-md-6 mb-3"><div class="d-flex justify-content-between small mb-1"><span class="text-white">Samba Server</span><span class="text-emerald font-mono">75%</span></div><div class="progress"><div class="progress-bar bg-success" style="width: 75%"></div></div></div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="d-flex justify-content-between small mb-1"><span class="text-white">UFW & Iptables</span><span class="text-emerald">85%</span></div>
+                                    <div class="progress"><div class="progress-bar bg-success" style="width: 85%"></div></div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="d-flex justify-content-between small mb-1"><span class="text-white">Linux (Ubuntu/Kali)</span><span class="text-emerald">85%</span></div>
+                                    <div class="progress"><div class="progress-bar bg-success" style="width: 85%"></div></div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="d-flex justify-content-between small mb-1"><span class="text-white">Cisco Packet Tracer</span><span class="text-emerald">80%</span></div>
+                                    <div class="progress"><div class="progress-bar bg-success" style="width: 80%"></div></div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="d-flex justify-content-between small mb-1"><span class="text-white">Samba Server</span><span class="text-emerald">75%</span></div>
+                                    <div class="progress"><div class="progress-bar bg-success" style="width: 75%"></div></div>
+                                </div>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="pills-dev" role="tabpanel">
                             <div class="row">
-                                <div class="col-md-6 mb-3"><div class="d-flex justify-content-between small mb-1"><span class="text-white">HTML / CSS</span><span class="text-cyan font-mono">90%</span></div><div class="progress"><div class="progress-bar bg-info" style="width: 90%"></div></div></div>
-                                <div class="col-md-6 mb-3"><div class="d-flex justify-content-between small mb-1"><span class="text-white">Bootstrap 5</span><span class="text-cyan font-mono">85%</span></div><div class="progress"><div class="progress-bar bg-info" style="width: 85%"></div></div></div>
-                                <div class="col-md-6 mb-3"><div class="d-flex justify-content-between small mb-1"><span class="text-white">JavaScript</span><span class="text-cyan font-mono">75%</span></div><div class="progress"><div class="progress-bar bg-info" style="width: 75%"></div></div></div>
-                                <div class="col-md-6 mb-3"><div class="d-flex justify-content-between small mb-1"><span class="text-white">Python / Flask</span><span class="text-cyan font-mono">70%</span></div><div class="progress"><div class="progress-bar bg-info" style="width: 70%"></div></div></div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="d-flex justify-content-between small mb-1"><span class="text-white">HTML / CSS</span><span class="text-cyan">90%</span></div>
+                                    <div class="progress"><div class="progress-bar bg-info" style="width: 90%"></div></div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="d-flex justify-content-between small mb-1"><span class="text-white">Bootstrap 5</span><span class="text-cyan">85%</span></div>
+                                    <div class="progress"><div class="progress-bar bg-info" style="width: 85%"></div></div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="d-flex justify-content-between small mb-1"><span class="text-white">JavaScript</span><span class="text-cyan">75%</span></div>
+                                    <div class="progress"><div class="progress-bar bg-info" style="width: 75%"></div></div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="d-flex justify-content-between small mb-1"><span class="text-white">Python / Flask</span><span class="text-cyan">70%</span></div>
+                                    <div class="progress"><div class="progress-bar bg-info" style="width: 70%"></div></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -287,7 +300,7 @@
             <div class="container">
                 <div class="row gy-5">
                     <div class="col-lg-6">
-                        <h2 class="section-title text-white fw-bold mb-4 font-mono"><span class="text-cyan">#</span> Pendidikan</h2>
+                        <h2 class="section-title text-white fw-bold mb-4"><span class="text-cyan">#</span> Pendidikan</h2>
                         <div class="glass-card p-4 h-100">
                             <div class="timeline-container">
                                 <div class="timeline-line"></div>
@@ -308,7 +321,7 @@
                     </div>
 
                     <div class="col-lg-6">
-                        <h2 class="section-title text-white fw-bold mb-4 font-mono"><span class="text-cyan">#</span> Pengalaman Praktik</h2>
+                        <h2 class="section-title text-white fw-bold mb-4"><span class="text-cyan">#</span> Pengalaman Praktik</h2>
                         <div class="glass-card p-4 h-100">
                             <div class="timeline-container">
                                 <div class="timeline-line"></div>
@@ -348,13 +361,13 @@
 
         <section id="projects" class="py-5 mb-5">
             <div class="container">
-                <h2 class="section-title text-white fw-bold mb-4 font-mono"><span class="text-cyan">#</span> Dokumentasi Sistem</h2>
+                <h2 class="section-title text-white fw-bold mb-4"><span class="text-cyan">#</span> Dokumentasi Sistem</h2>
                 <div class="row g-4">
                     <div class="col-md-6">
                         <div class="glass-card overflow-hidden h-100" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modalFirewall">
                             <div class="position-relative">
                                 <img src="ss-firewall.jpg" class="w-100 border-bottom border-secondary" alt="UFW Firewall" style="height: 250px; object-fit: cover; filter: brightness(0.8); transition: filter 0.3s;">
-                                <span class="badge bg-danger position-absolute top-0 end-0 m-3 font-mono">SECURITY</span>
+                                <span class="badge bg-danger position-absolute top-0 end-0 m-3">SECURITY</span>
                             </div>
                             <div class="p-4">
                                 <h5 class="text-white fw-bold">Konfigurasi UFW & Iptables</h5>
@@ -366,7 +379,7 @@
                         <div class="glass-card overflow-hidden h-100" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modalSamba">
                             <div class="position-relative">
                                 <img src="ss-samba.jpg" class="w-100 border-bottom border-secondary" alt="Samba Server" style="height: 250px; object-fit: cover; filter: brightness(0.8); transition: filter 0.3s;">
-                                <span class="badge bg-success position-absolute top-0 end-0 m-3 font-mono">SERVER</span>
+                                <span class="badge bg-success position-absolute top-0 end-0 m-3">SERVER</span>
                             </div>
                             <div class="p-4">
                                 <h5 class="text-white fw-bold">Manajemen Samba (smb.conf)</h5>
@@ -379,7 +392,7 @@
         </section>
     </main>
 
-    <footer class="py-4 text-center border-top border-secondary mt-5 font-mono small">
+    <footer class="py-4 text-center border-top border-secondary mt-5 small">
         <div class="container text-white">
             &copy; 2026 Muhammad Razin Haidar Karim. Dibuat dengan kerangka kerja <span class="text-cyan">Bootstrap 5</span>.
         </div>
@@ -413,66 +426,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        const texts = ['System Administrator', 'Network Enthusiast', 'Web Developer', 'Mahasiswa IT'];
-        let ti = 0, ci = 0, isDeleting = false;
-        const typeEl = document.getElementById('typingText');
-        
-        function type() {
-            const currentText = texts[ti];
-            typeEl.textContent = isDeleting ? currentText.substring(0, --ci) : currentText.substring(0, ++ci);
-            
-            let speed = isDeleting ? 40 : 100;
-            if (!isDeleting && ci === currentText.length) { speed = 2000; isDeleting = true; }
-            else if (isDeleting && ci === 0) { isDeleting = false; ti = (ti + 1) % texts.length; speed = 500; }
-            
-            setTimeout(type, speed);
-        }
-        type();
-
-        const termInput = document.getElementById('termInput');
-        const termOut = document.getElementById('termOut');
-        const termBody = document.getElementById('termBody');
-        
-        const commands = {
-            'help': 'Perintah tersedia:\n <span class="text-cyan">whoami</span>, <span class="text-cyan">skills</span>, <span class="text-cyan">education</span>, <span class="text-cyan">experience</span>, <span class="text-cyan">clear</span>',
-            'whoami': 'Nama: Muhammad Razin Haidar Karim\nNIM: 2411500016\nRole: Sysadmin & Web Developer',
-            'skills': '<span class="text-emerald">Net/Sec:</span> UFW, Iptables, Nmap, Samba, Linux\n<span class="text-cyan">Web Dev:</span> Bootstrap 5, HTML/CSS, Python',
-            'education': 'Universitas Budi Luhur (Teknik Informatika)\nSMK Telkom Jakarta (TKJ)',
-            'experience': 'Advanced Network Security (Linux)\nSamba File Server Configuration\nLab Technical Troubleshooting',
-            'clear': 'CLEAR',
-            'sudo': '<span class="text-danger">Akses root ditolak! Insiden ini akan dilaporkan.</span>'
-        };
-
-        termInput.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter') {
-                const cmd = termInput.value.trim().toLowerCase();
-                if (!cmd) return;
-                
-                const cmdLine = document.createElement('div');
-                cmdLine.innerHTML = `<span class="text-emerald">razin@cv:~$</span> ${cmd}`;
-                termOut.appendChild(cmdLine);
-
-                let response = commands[cmd];
-                if (cmd.startsWith('sudo')) response = commands['sudo'];
-                else if (!response) response = `<span class="text-danger">bash: ${cmd}: command not found.</span> Ketik <span class="text-cyan">help</span>.`;
-
-                if (response === 'CLEAR') {
-                    termOut.innerHTML = '';
-                } else {
-                    const resLine = document.createElement('div');
-                    resLine.className = 'text-white mt-1 mb-3';
-                    resLine.style.whiteSpace = 'pre-wrap';
-                    resLine.innerHTML = response;
-                    termOut.appendChild(resLine);
-                }
-
-                termInput.value = '';
-                termBody.scrollTop = termBody.scrollHeight;
-            }
-        });
-
-        termBody.addEventListener('click', () => termInput.focus());
-
         function copyText(text) {
             navigator.clipboard.writeText(text).then(() => {
                 const toast = document.getElementById('customToast');
