@@ -34,6 +34,14 @@
             font-size: 0.9rem;
             margin: 0.2rem;
         }
+        /* Efek zoom saat gambar galeri diarahkan kursor */
+        .gallery-img {
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+        .gallery-img:hover {
+            transform: scale(1.03);
+        }
     </style>
 </head>
 <body>
@@ -123,8 +131,8 @@
                             <p class="mb-1 text-muted"><small>Membangun dan mengonfigurasi lapisan keamanan jaringan menggunakan UFW dan Iptables pada sistem Linux. Implementasi mencakup:</small></p>
                             <ul>
                                 <li>Melakukan penyaringan lalu lintas (Traffic Filtering) berdasarkan alamat IP dan Port spesifik untuk layanan SSH, HTTP, FTP, dan SMB.</li>
-                                <li>Menerapkan aturan ICMP kustom pada <code>before.rules</code> untuk mengelola respons ping antar perangkat di jaringan.</li>
-                                <li>Menerapkan sistem *Rate Limiting* (pembatasan koneksi berlebih) untuk memitigasi serangan brute-force pada server SSH dan FTP.</li>
+                                <li>Menerapkan aturan ICMP kustom pada <code>before.rules</code> untuk mengelola respons *ping* antar perangkat di jaringan.</li>
+                                <li>Menerapkan sistem *Rate Limiting* (pembatasan koneksi berlebih) untuk memitigasi serangan *brute-force* pada server SSH dan FTP.</li>
                             </ul>
                         </div>
 
@@ -134,7 +142,7 @@
                             <p class="mb-1 text-muted"><small>Merancang infrastruktur berbagi data yang aman (Secure File Sharing) antar pengguna di dalam jaringan menggunakan Samba. Implementasi mencakup:</small></p>
                             <ul>
                                 <li>Melakukan instalasi dan konfigurasi Samba *service*.</li>
-                                <li>Manajemen user dan group tingkat lanjut untuk pemisahan hak akses (contoh: pembuatan grup *proyek*).</li>
+                                <li>Manajemen *user* dan *group* tingkat lanjut untuk pemisahan hak akses (contoh: pembuatan grup *proyek*).</li>
                                 <li>Konfigurasi `smb.conf` untuk menetapkan batasan hak akses *read-only* dan *write* spesifik pada setiap pengguna guna menjaga integritas data.</li>
                             </ul>
                         </div>
@@ -146,6 +154,26 @@
                                 <li>Mendiagnosis dan menangani kendala teknis pada PC laboratorium, seperti masalah <em>bootloop</em> dan error <em>Inaccessible Boot Device</em>.</li>
                                 <li>Melakukan pertukaran perangkat keras serta pemeliharaan sistem tingkat dasar.</li>
                             </ul>
+                        </div>
+
+                        <h3 class="section-title mt-5">Galeri Dokumentasi Proyek</h3>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="card h-100 border m-0 shadow-sm">
+                                    <img src="ss-firewall.jpg" class="card-img-top img-fluid gallery-img" alt="Konfigurasi Firewall UFW" style="object-fit: cover; height: 180px;">
+                                    <div class="card-body p-2 bg-light text-center">
+                                        <small class="fw-bold text-dark">Implementasi Rule Keamanan UFW & Iptables</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border m-0 shadow-sm">
+                                    <img src="ss-samba.jpg" class="card-img-top img-fluid gallery-img" alt="Konfigurasi Server Samba" style="object-fit: cover; height: 180px;">
+                                    <div class="card-body p-2 bg-light text-center">
+                                        <small class="fw-bold text-dark">Konfigurasi smb.conf Berbagi Data Lembar Kerja</small>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
