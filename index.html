@@ -7,51 +7,156 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: #f4f6f9;
+            background-color: #0a0a0a;
+            color: #d4d4d4;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        .header-bg {
-            background: linear-gradient(135deg, #0d6efd, #0dcaf0);
-            color: white;
-            padding: 4rem 0;
-            margin-bottom: 2rem;
-            border-radius: 0 0 1rem 1rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        ::selection {
+            background-color: #00ff41;
+            color: #000;
         }
-        .section-title {
-            border-bottom: 3px solid #0d6efd;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
+        .terminal-font {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .terminal-window {
+            background-color: #121212;
+            border-radius: 8px;
+            border: 1px solid #333;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);
+            margin-top: 3rem;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+        .terminal-bar {
+            background-color: #2b2b2b;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #111;
+        }
+        .dot {
+            height: 12px;
+            width: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+        }
+        .dot.red { background-color: #ff5f56; }
+        .dot.yellow { background-color: #ffbd2e; }
+        .dot.green { background-color: #27c93f; }
+        .terminal-title {
+            margin: 0 auto;
+            color: #999;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+        .profile-pic {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border: 3px solid #00ff41;
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.4);
         }
         .card {
-            border: none;
-            border-radius: 0.75rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            background-color: #121212;
+            border: 1px solid #222;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
             margin-bottom: 1.5rem;
+            color: #d4d4d4;
+        }
+        .card:hover {
+            border-color: #00ff41;
+            box-shadow: 0 0 12px rgba(0, 255, 65, 0.15);
+        }
+        .section-title {
+            color: #00ff41;
+            border-bottom: 1px dashed #333;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        .section-title::before {
+            content: "root@razin:~# ";
+            color: #666;
+            font-size: 1rem;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: normal;
         }
         .skill-badge {
-            font-size: 0.9rem;
+            background-color: transparent !important;
+            border: 1px solid #555;
+            color: #bbb !important;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.85rem;
             margin: 0.2rem;
+            font-weight: normal;
+        }
+        .skill-badge.net {
+            border-color: #00ff41;
+            color: #00ff41 !important;
+        }
+        .skill-badge.dev {
+            border-color: #0dcaf0;
+            color: #0dcaf0 !important;
+        }
+        a {
+            color: #0dcaf0;
+            transition: 0.2s;
+        }
+        a:hover {
+            color: #00ff41;
+            text-shadow: 0 0 8px rgba(0,255,65,0.4);
+        }
+        .text-primary {
+            color: #00ff41 !important;
+        }
+        .text-muted {
+            color: #888 !important;
         }
         .gallery-img {
-            transition: transform 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s;
             cursor: pointer;
+            border: 1px solid #333;
+            filter: grayscale(20%);
         }
         .gallery-img:hover {
             transform: scale(1.03);
+            filter: grayscale(0%);
+            border-color: #00ff41;
+            box-shadow: 0 0 15px rgba(0,255,65,0.3);
+        }
+        .modal-content {
+            background-color: #121212;
+            border: 1px solid #00ff41;
+        }
+        .btn-close {
+            filter: invert(1) grayscale(100%) brightness(200%);
+        }
+        ul li {
+            margin-bottom: 0.5rem;
         }
     </style>
 </head>
 <body>
 
-    <header class="header-bg text-center">
-        <div class="container">
-            <img src="photo.jpg" alt="Foto Profil Muhammad Razin" class="img-fluid rounded-circle mb-3 shadow" style="width: 180px; height: 180px; object-fit: cover; border: 4px solid white; background-color: white;">
-            <h1 class="display-4 fw-bold">Muhammad Razin Haidar Karim</h1>
-            <p class="lead mt-2">Mahasiswa Teknik Informatika | Web Developer & Network Enthusiast</p>
+    <div class="container">
+        <div class="terminal-window">
+            <div class="terminal-bar">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span class="terminal-title terminal-font">razin@linux-server: ~</span>
+            </div>
+            <div class="p-5 text-center">
+                <img src="photo.jpg" alt="Foto Profil Muhammad Razin" class="img-fluid rounded-circle mb-4 profile-pic">
+                <h1 class="display-5 fw-bold terminal-font" style="color: #00ff41;">Muhammad Razin Haidar Karim</h1>
+                <p class="lead mt-2 terminal-font">>_ Web Developer & Network Sysadmin</p>
+            </div>
         </div>
-    </header>
+    </div>
 
     <div class="container pb-5">
         <div class="row">
@@ -60,12 +165,12 @@
                 
                 <div class="card p-3">
                     <div class="card-body">
-                        <h4 class="card-title mb-4">Kontak</h4>
+                        <h4 class="card-title terminal-font mb-4" style="color: #0dcaf0;">> ./contact.sh</h4>
                         <ul class="list-unstyled">
-                            <li class="mb-2"><strong>📧 Email:</strong> 2411500016@student.budiluhur.ac.id</li>
-                            <li class="mb-2"><strong>📍 Lokasi:</strong> Jakarta, Indonesia</li>
+                            <li class="mb-2"><strong>[Email]:</strong> 2411500016@student.budiluhur.ac.id</li>
+                            <li class="mb-2"><strong>[Lokasi]:</strong> Jakarta, Indonesia</li>
                             <li class="mb-2">
-                                <strong>🔗 GitHub:</strong> 
+                                <strong>[GitHub]:</strong> 
                                 <a href="https://github.com/rznblk2" target="_blank" class="text-decoration-none">github.com/rznblk2</a>
                             </li>
                         </ul>
@@ -74,28 +179,28 @@
 
                 <div class="card p-3">
                     <div class="card-body">
-                        <h4 class="card-title mb-4">Keahlian</h4>
+                        <h4 class="card-title terminal-font mb-4" style="color: #0dcaf0;">> ./skills.sh</h4>
                         
-                        <h6 class="mt-3">Web Development</h6>
-                        <span class="badge bg-primary skill-badge">HTML/CSS</span>
-                        <span class="badge bg-primary skill-badge">Bootstrap</span>
-                        <span class="badge bg-primary skill-badge">JavaScript</span>
-                        <span class="badge bg-primary skill-badge">Flask</span>
+                        <h6 class="mt-3 terminal-font text-muted">-- web-dev</h6>
+                        <span class="badge skill-badge dev">HTML/CSS</span>
+                        <span class="badge skill-badge dev">Bootstrap</span>
+                        <span class="badge skill-badge dev">JavaScript</span>
+                        <span class="badge skill-badge dev">Flask</span>
                         
-                        <h6 class="mt-3">Programming Languages</h6>
-                        <span class="badge bg-secondary skill-badge">Java</span>
-                        <span class="badge bg-secondary skill-badge">Python</span>
+                        <h6 class="mt-4 terminal-font text-muted">-- programming</h6>
+                        <span class="badge skill-badge">Java</span>
+                        <span class="badge skill-badge">Python</span>
                         
-                        <h6 class="mt-3">Networking & Security</h6>
-                        <span class="badge bg-dark skill-badge">Linux (Ubuntu/Kali)</span>
-                        <span class="badge bg-dark skill-badge">Cisco Packet Tracer</span>
-                        <span class="badge bg-dark skill-badge">Nmap & Netcat</span>
-                        <span class="badge bg-dark skill-badge">UFW & Iptables</span>
-                        <span class="badge bg-dark skill-badge">Samba Server</span>
+                        <h6 class="mt-4 terminal-font text-muted">-- net-sec</h6>
+                        <span class="badge skill-badge net">Linux (Ubuntu/Kali)</span>
+                        <span class="badge skill-badge net">Cisco Packet Tracer</span>
+                        <span class="badge skill-badge net">Nmap & Netcat</span>
+                        <span class="badge skill-badge net">UFW & Iptables</span>
+                        <span class="badge skill-badge net">Samba Server</span>
                         
-                        <h6 class="mt-3">Multimedia</h6>
-                        <span class="badge bg-info text-dark skill-badge">DaVinci Resolve</span>
-                        <span class="badge bg-info text-dark skill-badge">Adobe Premiere Pro</span>
+                        <h6 class="mt-4 terminal-font text-muted">-- multimedia</h6>
+                        <span class="badge skill-badge">DaVinci Resolve</span>
+                        <span class="badge skill-badge">Adobe Premiere</span>
                     </div>
                 </div>
             </div>
@@ -105,71 +210,71 @@
                 <div class="card p-4">
                     <div class="card-body">
                         
-                        <h3 class="section-title">Tentang Saya</h3>
-                        <p class="mb-5">
+                        <h3 class="section-title">whoami</h3>
+                        <p class="mb-5" style="line-height: 1.8;">
                             Saya adalah mahasiswa Teknik Informatika yang berdedikasi dengan minat kuat dalam pengembangan perangkat lunak, administrasi sistem Linux, dan keamanan siber. Memiliki pengalaman praktis dalam mengatasi masalah perangkat keras/perangkat lunak, mengamankan lalu lintas jaringan, dan membangun solusi server untuk mengoptimalkan alur kerja.
                         </p>
 
-                        <h3 class="section-title">Pendidikan</h3>
+                        <h3 class="section-title">education</h3>
                         <div class="mb-4">
                             <h5 class="fw-bold text-primary">Universitas Budi Luhur</h5>
                             <h6 class="text-muted">Fakultas Teknologi Informasi - Teknik Informatika</h6>
-                            <p class="mb-0"><em>Sedang Berlangsung</em> | NIM: 2411500016</p>
+                            <p class="mb-0 terminal-font" style="color: #0dcaf0;">[ Sedang Berlangsung ] | NIM: 2411500016</p>
                         </div>
                         <div class="mb-5">
                             <h5 class="fw-bold text-primary">SMK Telkom Jakarta</h5>
                             <h6 class="text-muted">Teknik Komputer dan Jaringan (TKJ)</h6>
-                            <p class="mb-0">2021 - 2024</p>
+                            <p class="mb-0 terminal-font" style="color: #0dcaf0;">[ 2021 - 2024 ]</p>
                         </div>
 
-                        <h3 class="section-title">Pengalaman & Portofolio Jaringan</h3>
+                        <h3 class="section-title">experience_and_portfolio</h3>
                         
                         <div class="mb-4">
                             <h5 class="fw-bold">Advanced Network Security & Firewall Management</h5>
-                            <h6 class="text-primary mb-2">Linux System Security</h6>
-                            <p class="mb-1 text-muted"><small>Membangun dan mengonfigurasi lapisan keamanan jaringan menggunakan UFW dan Iptables pada sistem Linux. Implementasi mencakup:</small></p>
-                            <ul>
+                            <h6 class="text-primary mb-2 terminal-font">> Linux System Security</h6>
+                            <p class="mb-2 text-muted"><small>Membangun dan mengonfigurasi lapisan keamanan jaringan menggunakan UFW dan Iptables pada sistem Linux. Implementasi mencakup:</small></p>
+                            <ul class="text-muted">
                                 <li>Melakukan penyaringan lalu lintas (Traffic Filtering) berdasarkan alamat IP dan Port spesifik untuk layanan SSH, HTTP, FTP, dan SMB.</li>
                                 <li>Menerapkan aturan ICMP kustom pada <code>before.rules</code> untuk mengelola respons ping antar perangkat di jaringan.</li>
                                 <li>Menerapkan sistem Rate Limiting (pembatasan koneksi berlebih) untuk memitigasi serangan brute-force pada server SSH dan FTP.</li>
                             </ul>
                         </div>
 
-                        <div class="mb-4">
+                        <div class="mb-4 mt-4">
                             <h5 class="fw-bold">Samba File Server & Access Control Implementation</h5>
-                            <h6 class="text-primary mb-2">Linux Server Administration</h6>
-                            <p class="mb-1 text-muted"><small>Merancang infrastruktur berbagi data yang aman (Secure File Sharing) antar pengguna di dalam jaringan menggunakan Samba. Implementasi mencakup:</small></p>
-                            <ul>
+                            <h6 class="text-primary mb-2 terminal-font">> Linux Server Administration</h6>
+                            <p class="mb-2 text-muted"><small>Merancang infrastruktur berbagi data yang aman (Secure File Sharing) antar pengguna di dalam jaringan menggunakan Samba. Implementasi mencakup:</small></p>
+                            <ul class="text-muted">
                                 <li>Melakukan instalasi dan konfigurasi Samba service.</li>
                                 <li>Manajemen user dan group tingkat lanjut untuk pemisahan hak akses (contoh: pembuatan grup proyek).</li>
                                 <li>Konfigurasi <code>smb.conf</code> untuk menetapkan batasan hak akses read-only dan write spesifik pada setiap pengguna guna menjaga integritas data.</li>
                             </ul>
                         </div>
 
-                        <div class="mb-4">
+                        <div class="mb-5 mt-4">
                             <h5 class="fw-bold">Technical Troubleshooting & Maintenance</h5>
-                            <h6 class="text-primary mb-2">Laboratorium Komputer</h6>
-                            <ul>
+                            <h6 class="text-primary mb-2 terminal-font">> Laboratorium Komputer</h6>
+                            <ul class="text-muted">
                                 <li>Mendiagnosis dan menangani kendala teknis pada PC laboratorium, seperti masalah <em>bootloop</em> dan error <em>Inaccessible Boot Device</em>.</li>
                                 <li>Melakukan pertukaran perangkat keras serta pemeliharaan sistem tingkat dasar.</li>
                             </ul>
                         </div>
 
-                        <h3 class="section-title mt-5">Galeri Dokumentasi Proyek</h3>
-                        <div class="row g-3">
+                        <h3 class="section-title mt-5">cat /var/log/gallery</h3>
+                        <div class="row g-3 mt-2">
                             <div class="col-md-6">
-                                <div class="card h-100 border m-0 shadow-sm">
-                                    <img src="ss-firewall.jpg" class="card-img-top img-fluid gallery-img" alt="Konfigurasi Firewall UFW" style="object-fit: cover; height: 180px;" data-bs-toggle="modal" data-bs-target="#modalFirewall">
-                                    <div class="card-body p-2 bg-light text-center">
-                                        <small class="fw-bold text-dark">Implementasi Rule Keamanan UFW & Iptables</small>
+                                <div class="card h-100 bg-dark border m-0">
+                                    <img src="ss-firewall.jpg" class="card-img-top img-fluid gallery-img rounded-top" alt="Konfigurasi Firewall UFW" style="object-fit: cover; height: 180px;" data-bs-toggle="modal" data-bs-target="#modalFirewall">
+                                    <div class="card-body p-2 text-center" style="background-color: #1a1a1a;">
+                                        <small class="fw-bold text-light terminal-font">Syslog: UFW & Iptables Rule</small>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="card h-100 border m-0 shadow-sm">
-                                    <img src="ss-samba.jpg" class="card-img-top img-fluid gallery-img" alt="Konfigurasi Server Samba" style="object-fit: cover; height: 180px;" data-bs-toggle="modal" data-bs-target="#modalSamba">
-                                    <div class="card-body p-2 bg-light text-center">
-                                        <small class="fw-bold text-dark">Konfigurasi smb.conf Berbagi Data Lembar Kerja</small>
+                                <div class="card h-100 bg-dark border m-0">
+                                    <img src="ss-samba.jpg" class="card-img-top img-fluid gallery-img rounded-top" alt="Konfigurasi Server Samba" style="object-fit: cover; height: 180px;" data-bs-toggle="modal" data-bs-target="#modalSamba">
+                                    <div class="card-body p-2 text-center" style="background-color: #1a1a1a;">
+                                        <small class="fw-bold text-light terminal-font">Syslog: smb.conf Setup</small>
                                     </div>
                                 </div>
                             </div>
