@@ -83,6 +83,8 @@
                         <span class="badge bg-dark skill-badge">Linux (Ubuntu/Kali)</span>
                         <span class="badge bg-dark skill-badge">Cisco Packet Tracer</span>
                         <span class="badge bg-dark skill-badge">Nmap & Netcat</span>
+                        <span class="badge bg-dark skill-badge">UFW & Iptables</span>
+                        <span class="badge bg-dark skill-badge">Samba Server</span>
                         
                         <h6 class="mt-3">Multimedia</h6>
                         <span class="badge bg-info text-dark skill-badge">DaVinci Resolve</span>
@@ -98,7 +100,7 @@
                         
                         <h3 class="section-title">Tentang Saya</h3>
                         <p class="mb-5">
-                            Saya adalah mahasiswa Teknik Informatika yang berdedikasi dengan minat kuat dalam pengembangan perangkat lunak, administrasi sistem Linux, dan keamanan siber. Memiliki pengalaman praktis dalam mengatasi masalah perangkat keras/perangkat lunak dan membangun solusi digital untuk mengoptimalkan alur kerja.
+                            Saya adalah mahasiswa Teknik Informatika yang berdedikasi dengan minat kuat dalam pengembangan perangkat lunak, administrasi sistem Linux, dan keamanan siber. Memiliki pengalaman praktis dalam mengatasi masalah perangkat keras/perangkat lunak, mengamankan lalu lintas jaringan, dan membangun solusi server untuk mengoptimalkan alur kerja.
                         </p>
 
                         <h3 class="section-title">Pendidikan</h3>
@@ -113,21 +115,37 @@
                             <p class="mb-0">2021 - 2024</p>
                         </div>
 
-                        <h3 class="section-title">Pengalaman</h3>
-                        <div class="mb-5">
+                        <h3 class="section-title">Pengalaman & Portofolio Jaringan</h3>
+                        
+                        <div class="mb-4">
+                            <h5 class="fw-bold">Advanced Network Security & Firewall Management</h5>
+                            <h6 class="text-primary mb-2">Linux System Security</h6>
+                            <p class="mb-1 text-muted"><small>Membangun dan mengonfigurasi lapisan keamanan jaringan menggunakan UFW dan Iptables pada sistem Linux. Implementasi mencakup:</small></p>
+                            <ul>
+                                <li>Melakukan penyaringan lalu lintas (Traffic Filtering) berdasarkan alamat IP dan Port spesifik untuk layanan SSH, HTTP, FTP, dan SMB.</li>
+                                <li>Menerapkan aturan ICMP kustom pada <code>before.rules</code> untuk mengelola respons *ping* antar perangkat di jaringan.</li>
+                                <li>Menerapkan sistem *Rate Limiting* (pembatasan koneksi berlebih) untuk memitigasi serangan *brute-force* pada server SSH dan FTP.</li>
+                            </ul>
+                        </div>
+
+                        <div class="mb-4">
+                            <h5 class="fw-bold">Samba File Server & Access Control Implementation</h5>
+                            <h6 class="text-primary mb-2">Linux Server Administration</h6>
+                            <p class="mb-1 text-muted"><small>Merancang infrastruktur berbagi data yang aman (Secure File Sharing) antar pengguna di dalam jaringan menggunakan Samba. Implementasi mencakup:</small></p>
+                            <ul>
+                                <li>Melakukan instalasi dan konfigurasi Samba *service*.</li>
+                                <li>Manajemen *user* dan *group* tingkat lanjut untuk pemisahan hak akses (contoh: pembuatan grup *proyek*).</li>
+                                <li>Konfigurasi `smb.conf` untuk menetapkan batasan hak akses *read-only* dan *write* spesifik pada setiap pengguna guna menjaga integritas data.</li>
+                            </ul>
+                        </div>
+
+                        <div class="mb-4">
                             <h5 class="fw-bold">Technical Troubleshooting & Maintenance</h5>
-                            <h6 class="text-primary">Laboratorium Komputer</h6>
+                            <h6 class="text-primary mb-2">Laboratorium Komputer</h6>
                             <ul>
                                 <li>Mendiagnosis dan menangani kendala teknis pada PC laboratorium, seperti masalah <em>bootloop</em> dan error <em>Inaccessible Boot Device</em>.</li>
                                 <li>Melakukan pertukaran perangkat keras serta pemeliharaan sistem tingkat dasar.</li>
                             </ul>
-                        </div>
-
-                        <h3 class="section-title">Proyek Portofolio</h3>
-                        <div>
-                            <h5 class="fw-bold">Linux Server Configuration & Vulnerability Scanning Simulation</h5>
-                            <p class="mb-1 text-muted"><em>Sistem Administrasi & Keamanan Siber</em></p>
-                            <p>Membangun serta mengonfigurasi lingkungan server menggunakan sistem operasi Linux (Ubuntu dan Kali Linux) di dalam lingkungan virtual machine. Proyek ini mencakup implementasi pemindaian kerentanan (vulnerability scanning) dengan mengeksekusi pemindaian menggunakan Nmap untuk ekstraksi data, serta menerapkan teknik banner grabbing via Netcat guna menganalisis informasi port aktif dan memperkuat ketahanan keamanan pada target server.</p>
                         </div>
 
                     </div>
